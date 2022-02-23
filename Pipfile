@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pygame = "==2.1.2"
+black = "==22.1.0"
 
 [dev-packages]
 
