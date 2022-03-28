@@ -22,6 +22,7 @@ class PongGame:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
+                    break
 
             keys = pygame.key.get_pressed()
             if keys[pygame.K_w]:
@@ -48,6 +49,7 @@ class PongGame:
             game_info = self.game.loop()
             self.game.draw(True, False)
             pygame.display.update()
+
         pygame.quit()
 
     def train_ai(self, genome1, genome2, config):
@@ -121,6 +123,7 @@ def eval_genomes(genomes, config):
 
 
 def run_neat(config):
+    # p = neat.Checkpointer.restore_checkpoint("neat-checkpoint-49")
     p = neat.Population(config)
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
@@ -128,7 +131,7 @@ def run_neat(config):
     p.add_reporter(neat.Checkpointer(1))
 
     winner = p.run(eval_genomes, 50)
-    with open("best.pickle", "rb") as f:
+    with open("best.pickle", "wb") as f:
         pickle.dump(winner, f)
 
 
@@ -136,11 +139,11 @@ def test_ai(config):
     width, height = 700, 500
     window = pygame.display.set_mode((width, height))
 
-    with open("best.pickle", "wb") as f:
+    with open("best.pickle", "rb") as f:
         winner = pickle.load(f)
 
     game = PongGame(window, width, height)
-    game.test_ai(winner)
+    game.test_ai(winner, config)
 
 
 if __name__ == "__main__":
