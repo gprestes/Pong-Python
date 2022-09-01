@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pygame = "==2.1.2"
-black = "==22.6.0"
+black = "==22.8.0"
 neat-python = "==0.92"
 
 [dev-packages]
