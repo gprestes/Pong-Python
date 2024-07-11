@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pygame = "==2.5.2"
+pygame = "==2.6.0"
 black = "==24.4.2"
 neat-python = "==0.92"
 
