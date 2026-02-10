@@ -1,0 +1,19 @@
+[project]
+name = ""
+version = "0.0.1"
+requires-python = "==3.9.0"
+dependencies = [
+    "pygame==2.6.1",
+    "black==25.11.0",
+    "neat-python==1.0.0",
+]
+
+[dependency-groups]
+dev = []
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
