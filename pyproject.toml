@@ -1,7 +1,7 @@
 [project]
 name = ""
 version = "0.0.1"
-requires-python = "==3.10.19"
+requires-python = "==3.11.14"
 dependencies = [
     "pygame==2.6.1",
     "black==26.1.0",
