@@ -1,7 +1,7 @@
 [project]
 name = "Pong-Python"
 version = "0.0.1"
-requires-python = "==3.14.5"
+requires-python = "==3.14.6"
 dependencies = [
     "pygame==2.6.1",
     "black==26.5.1",
